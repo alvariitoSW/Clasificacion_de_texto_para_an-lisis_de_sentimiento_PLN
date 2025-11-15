@@ -1,0 +1,56 @@
+# Estadísticas del Corpus - Ejercicio 3
+# Generado automáticamente
+
+## 1. ETIQUETADO
+
+Umbrales de conversión rating → etiqueta:
+- POSITIVA: ratings [7.0, 10.0]
+- NEUTRAL:  ratings [5.0, 6.99]
+- NEGATIVA: ratings [0.0, 4.99]
+
+Corpus original (antes de balancear):
+- Total documentos: 999975
+- Positivas: 526439 (52.65%)
+- Neutral:   332514 (33.25%)
+- Negativas: 141022 (14.10%)
+
+## 2. BALANCEO
+
+Estrategia: Subsample (reducir clases mayoritarias)
+Corpus balanceado:
+- Total documentos: 423066
+- Positivas: 141022 (33.33%)
+- Neutral:   141022 (33.33%)
+- Negativas: 141022 (33.33%)
+
+## 3. PARTICIONADO
+
+Split estratificado (mantiene proporciones de clases):
+
+TRAIN: 270765 documentos (64.0%)
+  - positive: 90255 (33.33%)
+  - negative: 90255 (33.33%)
+  - neutral: 90255 (33.33%)
+
+VALIDATION: 67689 documentos (16.0%)
+  - positive: 22563 (33.33%)
+  - negative: 22563 (33.33%)
+  - neutral: 22563 (33.33%)
+
+TEST: 84612 documentos (20.0%)
+  - positive: 28204 (33.33%)
+  - negative: 28204 (33.33%)
+  - neutral: 28204 (33.33%)
+
+## 4. ARCHIVOS GENERADOS
+
+Directorio: data/processed_data/
+
+Conjuntos de documentos (CSV):
+- corpus_balanced.csv:  Corpus completo balanceado (423066 docs)
+- train_set.csv:        Conjunto de entrenamiento (270765 docs)
+- validation_set.csv:   Conjunto de validación (67689 docs)
+- test_set.csv:         Conjunto de test (84612 docs)
+- data_splits.csv:      Mapeo doc_id → conjunto (train/validation/test)
+
+Estos archivos están listos para ser utilizados en el Ejercicio 4 (clasificación).

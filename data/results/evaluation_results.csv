@@ -1,0 +1,6 @@
+rank,model,representation,f1_cv,f1_test,accuracy_test,precision_test,recall_test,best_params
+1,Random Forest,Características Lingüísticas,1.0000,1.0000,1.0000,1.0000,1.0000,"{'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_depth': 10}"
+2,Random Forest,Unigramas + Lingüísticas,0.9939,0.9955,0.9955,0.9955,0.9955,"{'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_depth': None}"
+3,SVM,Características Lingüísticas,0.9936,0.9933,0.9933,0.9934,0.9933,"{'C': 1.0, 'loss': 'squared_hinge', 'max_iter': 1000}"
+4,SVM,Unigramas + Lingüísticas,0.9943,0.9933,0.9933,0.9934,0.9933,"{'C': 10.0, 'loss': 'squared_hinge', 'max_iter': 1000}"
+5,SVM,Bigramas + Lingüísticas,0.9929,0.9926,0.9926,0.9927,0.9926,"{'C': 10.0, 'loss': 'squared_hinge', 'max_iter': 1000}"

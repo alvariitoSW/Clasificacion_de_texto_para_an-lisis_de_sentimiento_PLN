@@ -1,0 +1,24 @@
+================================================================================
+MEJOR MODELO - REPORTE DETALLADO
+================================================================================
+
+Modelo:         Random Forest
+Representación: Bigramas + Lingüísticas
+Accuracy:       0.9630
+Precision:      0.9667
+Recall:         0.9630
+F1-Score:       0.9628
+Tiempo train:   0.08s
+Tiempo test:    0.02s
+
+Reporte de clasificación:
+--------------------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+    negative       1.00      1.00      1.00         9
+     neutral       0.90      1.00      0.95         9
+    positive       1.00      0.89      0.94         9
+
+    accuracy                           0.96        27
+   macro avg       0.97      0.96      0.96        27
+weighted avg       0.97      0.96      0.96        27

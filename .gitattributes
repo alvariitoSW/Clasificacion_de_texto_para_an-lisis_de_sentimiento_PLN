@@ -1,0 +1,9 @@
+data/data_splits/** filter=lfs diff=lfs merge=lfs -text
+data/processed_data/all_linguistic_features.csv filter=lfs diff=lfs merge=lfs -text
+data/processed_data/balanced_corpus.csv filter=lfs diff=lfs merge=lfs -text
+data/processed_data/corpus_balanced.csv filter=lfs diff=lfs merge=lfs -text
+data/processed_data/train_set.csv filter=lfs diff=lfs merge=lfs -text
+data/processed_data/test_set.csv filter=lfs diff=lfs merge=lfs -text
+data/processed_data/validation_set.csv filter=lfs diff=lfs merge=lfs -text
+data/raw_data/** filter=lfs diff=lfs merge=lfs -text
+data/vector_representations/** filter=lfs diff=lfs merge=lfs -text

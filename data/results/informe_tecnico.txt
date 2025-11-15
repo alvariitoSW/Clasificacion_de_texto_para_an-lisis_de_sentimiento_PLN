@@ -1,0 +1,121 @@
+================================================================================
+INFORME TÉCNICO: CLASIFICACIÓN DE POLARIDAD EN RESEÑAS BGG
+================================================================================
+
+Fecha de generación: 2025-11-12 08:47:14
+
+1. RESUMEN EJECUTIVO
+--------------------------------------------------------------------------------
+
+Mejor modelo:        Random Forest
+Representación:      Características Lingüísticas
+F1-Score (Test):     1.0000
+Accuracy (Test):     1.0000
+Hiperparámetros:     {'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_depth': 10}
+
+2. CONJUNTOS DE DATOS
+--------------------------------------------------------------------------------
+
+Train:      270765 documentos
+Validation: 67689 documentos
+Test:       84612 documentos
+
+3. REPRESENTACIONES VECTORIALES EVALUADAS
+--------------------------------------------------------------------------------
+
+  • tfidf_1gram: 5000 características
+  • tfidf_2gram: 10000 características
+  • tfidf_3gram: 15000 características
+  • linguistic: 23 características
+  • combined_1gram: 5023 características
+  • combined_2gram: 10023 características
+  • combined_3gram: 15023 características
+
+4. MODELOS Y HIPERPARÁMETROS
+--------------------------------------------------------------------------------
+
+4.1. Multinomial Naive Bayes
+  Grid: {'alpha': [0.01, 0.1, 0.5, 1.0, 2.0], 'fit_prior': [True, False]}
+
+4.2. Support Vector Machine (LinearSVC)
+  Grid: {'C': [0.01, 0.1, 1.0, 10.0], 'loss': ['hinge', 'squared_hinge'], 'max_iter': [1000, 2500]}
+
+4.3. Random Forest
+  Grid: {'n_estimators': [50, 100, 200], 'max_depth': [10, 20, None], 'min_samples_split': [2, 5, 10], 'min_samples_leaf': [1, 2, 4]}
+
+5. RESULTADOS DE EVALUACIÓN
+--------------------------------------------------------------------------------
+
+Rank   Modelo             Representación                 F1-Test   
+--------------------------------------------------------------------------------
+1      Random Forest      Características Lingüísticas   1.0000    
+2      Random Forest      Unigramas + Lingüísticas       0.9955    
+3      SVM                Características Lingüísticas   0.9933    
+4      SVM                Unigramas + Lingüísticas       0.9933    
+5      SVM                Bigramas + Lingüísticas        0.9926    
+
+6. ANÁLISIS DEL MEJOR MODELO
+--------------------------------------------------------------------------------
+
+              precision    recall  f1-score   support
+
+    negative       1.00      1.00      1.00     28204
+     neutral       1.00      1.00      1.00     28204
+    positive       1.00      1.00      1.00     28204
+
+    accuracy                           1.00     84612
+   macro avg       1.00      1.00      1.00     84612
+weighted avg       1.00      1.00      1.00     84612
+
+
+Matriz de Confusión:
+============================================================
+
+                 Predicho
+                 neg   neu   pos
+Real       neg  28203      1      0   
+Real       neu     0   28204      0   
+Real       pos     0      0   28204   
+
+============================================================
+Métricas por Clase:
+============================================================
+
+Clase        Precision    Recall       F1-Score     Support     
+------------------------------------------------------------
+negative     1.0000       1.0000       1.0000       28204       
+neutral      1.0000       1.0000       1.0000       28204       
+positive     1.0000       1.0000       1.0000       28204       
+
+
+7. MÉTRICAS POR CONJUNTO DE DATOS (Mejor Modelo)
+--------------------------------------------------------------------------------
+
+TRAIN:
+  accuracy    : 1.0000
+  precision   : 1.0000
+  recall      : 1.0000
+  f1          : 1.0000
+
+VALIDATION:
+  accuracy    : 1.0000
+  precision   : 1.0000
+  recall      : 1.0000
+  f1          : 1.0000
+
+TEST:
+  accuracy    : 1.0000
+  precision   : 1.0000
+  recall      : 1.0000
+  f1          : 1.0000
+
+
+8. CONCLUSIONES
+--------------------------------------------------------------------------------
+
+• El modelo Random Forest con Características Lingüísticas
+  obtuvo el mejor rendimiento con F1-Score de 1.0000
+• Los hiperparámetros óptimos son: {'n_estimators': 100, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_depth': 10}
+• El modelo muestra buen balance entre las tres clases
+• Tiempo de entrenamiento: 11.36s
+• Tiempo de predicción: 0.10s
